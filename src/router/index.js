@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const App = () => (
+const BasicExample = () => (
   <Router>
     <div>
       <ul>
@@ -23,8 +23,17 @@ const App = () => (
   </Router>
 );
 
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+);
 
-
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+);
 
 const Topics = ({ match }) => (
   <div>
@@ -56,4 +65,4 @@ const Topic = ({ match }) => (
   </div>
 );
 
-export default App;
+export default BasicExample;
