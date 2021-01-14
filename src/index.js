@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import AppStore from './stores/AppStore';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'mobx-react';
+import stores from "./store/";
 
-const store = new AppStore();
-
+console.log(6666,stores)
 ReactDOM.render(
-  <React.StrictMode>
-    <App store={store}/>
-  </React.StrictMode>,
+  <Provider {...stores}>
+    <React.Fragment>
+      <App/>
+    </React.Fragment>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 
