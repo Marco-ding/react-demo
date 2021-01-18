@@ -7,12 +7,12 @@
  * @Copyright: 1.0
  */
 
-import OrderLine from "./OrderLine";
-import Timer from "./timer";
+import orderLine from "./OrderLine";
+import timer from "./timer";
 class Stores {
   constructor() {
-    this.orderLine = new OrderLine();
-    this.timer = new Timer();
+    this.orderLine = orderLine;
+    this.timer = timer;
   }
 }
 

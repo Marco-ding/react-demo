@@ -15,6 +15,7 @@ class OrderLine {
   @observable amount = 1;
   // 计算属性
   @computed get total() {
+    console.log(111,this)
     return this.price * this.amount;
   }
 
@@ -27,11 +28,10 @@ class OrderLine {
     this.length = Math.pow(2, value);
   }
 
-  @action.bound
-  resize() {
-    console.log(2222,this.price,this.total)
-    this.price++;
+  @action resize() {
+    console.log(2222,this)
+    this.price ++;
   }
 }
-
-export default OrderLine;
+const orderLine = new OrderLine
+export default orderLine;

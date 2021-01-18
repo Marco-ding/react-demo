@@ -23,11 +23,12 @@ import { observable, action } from "mobx";
 
 // export default appState;
 
-export default class Timer {
+ class Timer {
   @observable
   mytimer = {
     timer: 10
   };
+  @observable todos = []
 
   @action
   resetTime() {
@@ -35,3 +36,6 @@ export default class Timer {
     this.mytimer.timer = 0;
   }
 }
+
+const timer = new Timer()
+export default timer

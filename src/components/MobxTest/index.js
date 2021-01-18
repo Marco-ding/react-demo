@@ -15,7 +15,7 @@ import React, { Component } from 'react';
 import { observer,inject } from 'mobx-react';
 import {observable} from 'mobx';
 
-@inject('orderLine')
+@inject('orderLine','timer')
 @observer
 class MobxTest extends Component {
   @observable secondsPassed = 0;
@@ -25,14 +25,15 @@ class MobxTest extends Component {
 
   }
   render() {
+    const {price,total,resize} = this.props.orderLine
     return (
       <div>
         {/*
           <p>{this.props.orderLine.total}</p>
           <p>{this.props.orderLine.squared}</p>
           */}
-        <p>{this.props.orderLine.price}</p>
-        <p>{this.props.orderLine.total}</p>
+        <p>{price}</p>
+        <p>{total}</p>
         <p>{this.secondsPassed}</p>
         <button onClick={this.onReset.bind(this)}>按钮</button>
         {/*<button onClick={this.onReset.bind(this)}>Seconds passed: {this.props.appState.timer}</button>*/}
